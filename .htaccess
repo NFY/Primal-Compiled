@@ -1,0 +1,44 @@
+Options -Indexes
+
+# Force the latest IE version, in various cases when it may fall back to IE7 mode
+#  http://github.com/rails/rails/commit/123eb25#commitcomment-118920
+# Use ChromeFrame if it's installed for a better experience for the poor IE folk
+<IfModule mod_setenvif.c>
+  <IfModule mod_headers.c>
+    BrowserMatch MSIE ie
+    Header set X-UA-Compatible "IE=Edge" env=ie
+    BrowserMatch chromeframe gcf
+    Header append X-UA-Compatible "chrome=1" env=gcf
+  </IfModule>
+</IfModule>
+
+# use utf-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+# force utf-8 for a number of file formats
+AddCharset utf-8 .html .css .js .xml .json .rss
+
+
+<IfModule mod_php5.c>
+#the following 4 lines are for debugging purposes. Comment out when running live
+php_value error_reporting 6135
+php_flag display_errors on
+php_flag html_errors on
+
+php_flag magic_quotes_gpc off
+php_flag register_globals off
+php_flag short_open_tag on  
+php_value post_max_size 250M
+php_value upload_max_filesize 250M
+php_value memory_limit 250M
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteRule ^$ index.php [L]
+
+#if file exists and isn't inside protected folders, forward file, otherwise send full URL to execute.php
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_URI} ^(routes|classes) [NC]
+RewriteRule ^/?(.*)$ index.php [L]
+</IfModule>

@@ -1,0 +1,124 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin:0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+body {line-height: 1;-webkit-font-smoothing: antialiased;}
+ol, ul {list-style: none;}
+img {vertical-align:middle;-ms-interpolation-mode: bicubic;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+:focus {outline: 0;}
+table {border-collapse: collapse;border-spacing: 0;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+fieldset {margin: 0 2px;padding: 0.35em 0.625em 0.75em;}
+legend {*margin-left: -7px;}
+button,input {line-height: normal;*overflow: visible;}
+input[type="checkbox"],input[type="radio"] {box-sizing: border-box;}
+button,input,select,textarea {font-size: 100%;margin: 0;vertical-align: baseline;*vertical-align: middle;}
+textarea {overflow: auto;vertical-align: top;}
+address {font-style:normal;}
+
+* {
+	   -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/*   --------------------------------   END RESET CSS  --------------------------------*/
+
+html {
+    overflow-y: scroll;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    height:100%;
+}
+
+body {
+	background-color:white;
+	
+	font-family:"Helvetica Neue", Helvetica, sans-serif;
+	font-size:12px;
+	height:100%;
+}
+
+#center {
+	width:970px;
+	margin:0 auto;
+	position:relative;
+	z-index:1;
+}
+
+a {text-decoration:none;color:#3499cc;}
+a:active, a:hover {text-decoration:underline;color:#237FAE;}
+
+hr {border:0;background:transparent;color:transparent;border-top:1px solid black;margin:10px 0;height:0;}
+hr.clr, hr[clr] {margin:0;clear:both;visibility:hidden;}
+
+
+
+/* Notification Popup -------------------------------------------------------------------------------------------*/
+
+#center > .notification {
+	background-color:#ffffb9;
+	box-shadow:0 1px 4px rgba(0,0,0,0.17);
+	margin:0 5px;
+}
+
+#center > .notification.error {
+	background-color:#fda5a8;
+}
+
+#center > .notification span {
+	display:block;
+	padding:5px 10px 6px;
+	font-weight:bold;
+	font-size:11px;
+}
+
+/* Header -------------------------------------------------------------------------------------------*/
+
+header {
+	position:relative;
+
+}
+
+/* Main Body -------------------------------------------------------------------------------------------*/
+
+#content {
+	min-height:100%;
+	position: relative;
+	overflow:hidden;
+	padding:0 5px;
+	margin-top:10px;
+}
+
+/* Footer -------------------------------------------------------------------------------------------*/
+
+footer {
+	position:relative;
+
+}
+
+
+/* Error and Confirmation Pages -------------------------------------------------------------------------------------------*/
+
+body.Confirmation #content h1 {
+	font-size:2em;
+	margin:30px 0 10px 30px;
+}
+body.Confirmation #content p {
+	margin:10px 0 10px 30px;
+}
+
+/* Sprites -------------------------------------------------------------------------------------------*/
+
+.sprite {margin:0;padding:0;width:1px;height:1px;display: inline-block;zoom:1;*display:inline;background:no-repeat 1000px 1000px;vertical-align:middle;text-indent:-1000px;overflow:hidden;font-size:0;}
+
+
+
+
