@@ -6,7 +6,7 @@ class Session extends SessionAbstraction  {
 	protected $session_key = 'Primal';
 	
 	function __construct($start = false) {
-		if ($start || $_COOKIE['PHPSESSID']) $this->start();
+		if ($start || $_COOKIE[ini_get('session.name')]) $this->start();
 	}
 	
 	protected $started = false;
