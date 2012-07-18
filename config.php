@@ -10,5 +10,5 @@ Connection::AddLink(array(
 	'password'	=> null
 ));
 
-$env = Environment::getInstance();
+$env = Environment::Singleton();
 $env->setName('development');
