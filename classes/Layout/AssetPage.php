@@ -7,13 +7,15 @@ class AssetPage extends \Primal\Layout\Page {
 
 	function __construct() {
 		parent::__construct();
-		//$this->addScript('//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js');
-		$this->addScript('lib/jquery-1.7.2.min.js');
+
+		$this->import('jquery');
+
 		$this->addStyle('global.css');
 	}
 
 
 	static $importables = array(
+		'jquery'				=>'script:lib/jquery-1.7.2.min.js',
 		'jquery effects'		=>'script:lib/jquery-ui-1.8.20.effects.min.js',
 		'jquery ui core'		=>array('script:lib/jquery-ui-1.8.20.core.min.js', 'style:lib/jquery-ui-1.8.20.css'),
 		'jquery interactions'	=>array('jquery ui core', 'script:lib/jquery-ui-1.8.20.interactions.min.js'),
