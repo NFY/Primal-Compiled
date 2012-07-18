@@ -13,7 +13,7 @@ class Request extends ArrayObject {
 
 	protected static $requestData = false;
 		
-	public function __construct() {
+	function __construct() {
 		if (self::$requestData === false) {
 		
 			//process incomming data based on the request content type
