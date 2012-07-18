@@ -204,6 +204,12 @@ class Visitor {
 // It also refreshes the timeout on the cookie so that it wont expire.
 
 if (!$_SESSION['Primal']['Visitor']['ID'] && isset($_COOKIE['vi']) && isset($_COOKIE['vp'])) { //no logged in user, but a cookie exists
+	
+	if (!isset($_SESSION['Primal']) || !isset($_COOKIE[ini_get('session.name')])) {
+		session_start();
+		if (!isset($_SESSION['Primal'])) $_SESSION['Primal'] = array(); //PHP offers no way of verifying that a session has been created, so we make the Primal array as a verify check.
+	}
+	
 	$u = new User($_COOKIE['vi']);
 	if ($u && $_COOKIE['vp']===sha1($u['password'])) {
 		Visitor::LoginWithUser($u);
