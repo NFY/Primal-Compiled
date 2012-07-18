@@ -16,7 +16,7 @@ class Launcher extends Routing\CachedRouter {
 	 *
 	 * @return Router Current instance, for chaining
 	 */
-	protected function run() {
+	public function run() {
 		if (!file_exists($this->route_file)) throw new Exception('Route file does not exist: '.$this->route_file);
 		
 		$closure = function ($route, $arguments, $response, $session) {
