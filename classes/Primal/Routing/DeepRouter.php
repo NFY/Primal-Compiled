@@ -49,5 +49,26 @@ class DeepRouter extends Router {
 		return isset($this->routes[$name]) ? $this->routes[$name] : false;
 	}
 	
+	/**
+	 * Reroutes the request to the specified route.
+	 *
+	 * @param string $new_route Name of the new route
+	 * @return Karte Current instance, for chaining
+	 */
+	public function reroute($new_route = null) {
+
+		if ($new_route !== null) {
+			if ($found = $this->checkRoute($new_route)) {
+				$this->route_name = $new_route;
+				$this->route_file = $found;
+			} else {
+				throw new Exception('Route could not be found: '.$new_route);
+			}
+		}
+
+		return $this->run();
+		
+	}
+	
 	
 }

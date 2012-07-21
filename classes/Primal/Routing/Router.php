@@ -256,7 +256,7 @@ class Router {
 	 *
 	 * @return Karte Current instance, for chaining
 	 */
-	public function run() {
+	protected function run() {
 		if (!file_exists($this->route_file)) throw new Exception('Route file does not exist: '.$this->route_file);
 		
 		$closure = function ($route, $arguments) {
@@ -279,7 +279,7 @@ class Router {
 
 		if ($new_route !== null) {
 			$this->route_name = $new_route;
-			$this->route_file = $this->routes_path . $new_route . '.php';
+			$this->route_file = "{$this->routes_path}/{$new_route}.php";
 		}
 
 		return $this->run();
